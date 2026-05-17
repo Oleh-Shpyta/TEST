@@ -1,0 +1,551 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700;800&display=swap');
+
+*{ /* вказали для загального відступи будууть 0*/
+    margin: 0;
+    padding: 0;
+}
+body{ /* вказали для body шрифт який ми підключили з гугл фонтс*/
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400; /* вказали для body товщину шрифту 400*/
+    color: #ffffff; /* вказали для body колір тексту білий*/
+    background: black;
+}
+
+a {
+    text-decoration: none; /* прибрали підкреслення для посилань*/
+}
+
+img{
+    max-width: 100%; /* зображення не буде виходити за межі контейнера*/
+}
+
+.wrapper{   /* вказали для wrapper  фоновий градієнт*/
+    background: linear-gradient(180deg,rgba(0, 0, 0, 1) 0%, rgb(26, 14, 1, 1) 100%);
+    width: 100%;
+    overflow-x: hidden; /* приховали горизонтальную полосу прокрутки для wrapper*/
+}
+
+.container{ /* вказали для container ширину 1400px та центроване розташування*/
+    width: 1200px;
+    margin: 0 auto;
+}
+
+header{ /* вказали для header відступи з усіх сторін 20px та центроване розташування тексту*/
+    padding: 50px 0;
+}
+
+header .logo, 
+footer .block .footer-logo{ 
+   text-transform: uppercase; /* вказали для logo всі літери будуть великими*/
+   font-size: 29px; /* вказали для logo розмір шриф ту 29px*/
+   font-weight: 800; /* вказали для logo товщину шрифту */
+}
+
+header nav{
+    float: right; /* вказали для nav розташування праворуч*/
+    width: 50%; /* вказали для nav ширину 50%*/
+}
+
+header nav ul{
+    list-style: none; /* прибрали маркери для списку*/
+    display : flex; /* вказали для ul використання флексбокса для розташування елементів*/
+    justify-content: space-between; /* вказали для ul рівномірний розподіл елементів по горизонталі*/   
+    z-index: 2; /* вказали для ul z-index 2 для розташування поверх інших елементів*/
+    position: relative; /* вказали для ul позицію відносну для правильного розташування псевдоелемента активного елемента*/
+
+}
+
+header nav ul li {
+    display: inline-block; /* вказали для li відображення у вигляді рядка*/
+}
+
+header nav ul li a {
+    color: #ffffff; /* вказали для посилань колір білий*/
+}
+    
+header nav ul li:not(.active):not(.btn) a:hover{
+    border-bottom: 5px solid #FA9021; /* вказали для посилань при наведенні нижню рамку оранжевого кольору*/
+}
+
+header nav ul li.active::after{
+    content: ''; /* вказали для активного елемента псевдоелемент після нього*/
+    display: block; /* вказали для псевдоелемента відображення у вигляді блоку*/
+    width: 40px; /* вказали для псевдоелемента ширину 40px*/
+    height: 5px; /* вказали для псевдоелемента висоту 5px*/
+    background: #FA9021; /* вказали для псевдоелемента*/
+    border-radius: 10px; /* вказали для псевдоелемента закруглення кутів 10px*/
+    position: relative;
+    top: 10px; /* вказали для псевдоелемента відступ зверху 20px*/
+    left: -15px; /* вказали для псевдоелемента відступ зліва -15px*/
+}
+
+header nav ul li.btn a, .email .block button {
+    background: #FA9021; /* вказали для кнопки фон оранжевого кольору*/
+    padding: 9px 17px; /* вказали для кнопки відступи з усіх сторін 9px та 17px*/
+    border-radius: 5px; /* вказали для кнопки закруглення кутів 5px*/
+    transition: all 500ms ease; /* вказали для кнопки плавну анімацію при зміні стану*/
+
+}
+
+header nav ul li.btn a:hover, 
+.email .block button:hover {
+    background: #e01a1a; /* вказали для кнопки при наведенні фон оранжевого кольору */
+
+}
+
+.hero {
+    padding-bottom: 100px; /* вказали для hero відступ знизу 100px*/
+    position: relative;
+    z-index: 1  ; /* вказали для hero z-index 1 для розташування поверх інших елементів*/
+}
+
+.hero--info{
+    width: 530px; /* вказали для hero--info ширину 530px*/
+    padding-top: 70px; /* вказали для hero--info відступ зверху 70px*/
+}
+
+.hero--info h2{
+    color: #E87D0E; /* вказали для заголовка h2 колір оранжевий*/
+    font-size: 20px; /* вказали для заголовка h2 розмір шрифту 20px*/
+    font-weight: 600; /* вказали для заголовка h2 товщину шрифту 600*/
+}
+
+.hero--info h1{
+    font-size: 50px; /* вказали для заголовка h2 розмір шрифту 20px*/
+    font-weight: 600; /* вказали для заголовка h2 товщину шрифту 600*/
+}
+
+.hero--info p{
+    font-size: 16px; /* вказали для абзацу розмір шрифту 16px*/
+    font-weight: 500; /* вказали для абзацу товщину шрифту 500*/
+    line-height: 170%; /* вказали для абзацу міжрядковий інтервал 170%*/
+    margin: 30px 0; /* вказали для абзацу відступи з усіх сторін 30px та 0*/
+}
+
+.hero--info .btn, 
+.hero-about .info .btn{
+    background: #FA8305; /* вказали для кнопки фон оранжевого кольору*/
+    color: #ffffff; /* вказали для кнопки колір тексту білий*/
+    border-radius: 50px; /* вказали для кнопки закруглення кутів 50px*/
+    padding: 15px 30px; /* вказали для кнопки відступи з усіх сторін 15px та 30px*/
+    border: 0; /* прибрали рамку для кнопки*/
+    transition: all 500ms ease; /* вказали для кнопки плавну анімацію при зміні стану*/
+}
+
+.hero--info .btn:hover, 
+.hero-about .info .btn:hover {
+    cursor: pointer; /* вказали для кнопки при наведенні курсор указатель*/
+    transform: scale(1.1); /* вказали для кнопки при наведенні збільшення масштабу на 10%*/
+}
+
+.hero img {
+    position: absolute; /* вказали для зображення позицію абсолютну*/
+    top: -150px; /* вказали для зображення відступ зверху -150px*/
+    right: 0; /* вказали для зображення відступ справа 0*/
+}
+
+/* секція trending games */
+.trending{
+    padding-top: 150px; /* вказали для секції trending відступ зверху 150px*/
+}
+.trending h3{
+    font-weight: 600; /* вказали для заголовка h3 товщину шрифту 600*/
+    font-size: 31px; /* вказали для заголовка h3 розмір шрифту 20px*/
+}
+
+.trending .see-all, .projects .see-all{
+    color: #ffffff; /* вказали для посилання see-all колір белый*/
+    background: rgb(43, 42, 42); /* вказали для посилання see-all фон черный*/
+    border-radius: 5px; /* вказали для посилання see-all закругление углов 5px*/
+    padding: 12px 23px; /* вказали для посилання see-all отступы со всех сторон 12px и 23px*/   
+    float: right; /* вказали для посилання see-all расположение справа*/
+    display: block; /* вказали для посилання see-all отображение в виде блока*/
+    transition: all 500ms ease; /* вказали для посилання see-all плавную анимацию при изменении состояния*/
+}
+
+.trending .see-all:hover, .projects .see-all:hover{
+    transform: scale(1.1);  /* вказали для посилання see-all при наведении увеличение масштаба на 10%*/
+}
+
+.trending .games{
+    display: flex; /* вказали для секції games використання флексбокса для розміщення елементів*/
+    justify-content: space-between; /* вказали для секції games рівномірне розподіл елементів по горизонталі*/
+    width: 100%; /* вказали для секції games ширину 100%*/
+    padding: 50px 0; /* вказали для секції games відступи з усіх сторін 50px та 0*/ 
+}
+
+.trending .games span{
+    display: block; /* вказали для span отображение в виде блока*/
+    text-align: center; /* вказали для span выравнивание текста по центру*/
+    margin-top: 20px; /* вказали для span отступ сверху 20px*/
+}
+
+.trending .games span img{
+    position: relative;
+    top: 5px; /* вказали для зображення в span відступ сверху 5px*/
+    margin-right: 7px; /* вказали для зображення в span отступ справа 7px*/
+}
+
+.big-text{
+    padding: 50px 0; /* вказали для big-text відступи з усіх сторін 50px та 0*/
+    font-size: 35px; /* вказали для big-text розмір шрифту 35px*/
+    font-weight: 600; /* вказали для big-text товщину шрифту 600*/
+    text-align: center; /* вказали для big-text выравнивание текста по центру*/
+    width: 800px; /* вказали для big-text ширину 800px*/
+}
+
+.banner {
+    padding: 80px 0; /* вказали для banner відступи з усіх сторін 80px та 0*/   
+}
+
+.banner h3 {
+    font-size: 30px; /* вказали для заголовка h3 розмір шрифту 30px*/   
+    font-weight: 600; /* вказали для заголовка h3 товщину шрифту 600*/
+    margin-bottom: 30px; /* вказали для заголовка h3 отступ снизу 30px*/
+}
+
+.banner p {
+    line-height: 170%; /* вказали для абзаца міжрядковий інтервал 170%*/
+    margin-bottom: 30px; /* вказали для абзаца отступ снизу 30px*/
+    width: 550px; /* вказали для абзаца ширину 550px*/
+}
+
+.banner img{
+    width: 100%; /* вказали для зображення ширину 100%*/
+    margin-bottom: 20px; /* вказали для зображення отступ снизу 30px*/
+}
+
+/* секція featurse*/
+
+.featurse{
+    background: url("../img/Fon1.png") no-repeat center fixed; /* вказали для секції features фоновое изображение без повторения и центрированное*/
+    background-size: cover; /* вказали для секції features масштабирование фона для полного покрытия контейнера*/
+    padding: 80px 0; /* вказали для секції features отступы со всех сторон 80px и 0*/   
+}
+
+.featurse h3, 
+.featurse p {
+    margin-bottom: 20px; /* вказали для заголовка h3 отступ снизу 20px*/
+    text-align: center; /* вказали для заголовка h3 выравнивание текста по центру*/
+    max-width: 800px; /* вказали для заголовка h3 максимальную ширину 800px*/
+    margin-left: auto; /* вказали для заголовка h3 автоматические отступы слева и справа для центрирования*/
+    margin-right: auto;
+}
+
+.featurse h3 {
+    font-size: 30px; /* вказали для заголовка h3 розмір шрифту 30px*/   
+    font-weight: 600; /* вказали для заголовка h3 товщину шрифту 600*/
+}
+
+.featurse .info {
+    display: flex; /* вказали для секції info использование флексбокса для размещения элементов*/
+    justify-content: center; /* вказали для секції info выравнивание элементов по центру*/
+    flex-wrap: wrap; /* вказали для секції info перенос элементов на новую строку при недостатке места*/
+}
+
+.featurse .info .block {
+    text-align: center; /* вказали для блока block выравнивание текста по центру*/
+    width: 20%; /* вказали для блока block ширину 20%*/
+    margin: 30px 2%; /* вказали для блока block отступы со всех сторон 30px и 2%*/
+}
+
+.featurse .info .block img {
+    margin-bottom: 15px; /* вказали для зображення в блоке block отступ снизу 15px*/
+}
+
+/* секція projects */
+
+.projects{
+    padding: 100px 0; /* вказали для секції projects отступы со всех сторон 80px и 0*/   
+}
+
+.projects h3{
+    font-size: 30px;
+    text-align: center; /* вказали для заголовка h3 выравнивание текста по центру*/
+
+}
+
+.projects p {
+    margin: 40px 0; /* вказали для абзаца отступы со всех сторон 40px и 0*/
+    text-align: center; /* вказали для абзаца выравнивание текста по центру*/
+}
+
+.projects .images {
+    display: flex; /* вказали для секції images использование флексбокса для размещения элементов*/
+   justify-content: space-around; /* вказали для секції images равномерное распределение элементов по горизонтали*/
+   margin-bottom: 20px; /* вказали для секції images отступ снизу 20px*/
+}
+
+.projects .see-all{
+    float: none; /* вказали для посилання see-all в секції projects расположение по умолчанию (не справа)*/  
+    width: 70px; /* вказали для посилання see-all ширину 70px*/
+    text-align: center; /* вказали для посилання see-all выравнивание текста по центру*/
+    margin: auto; /* вказали для посилання see-all автоматические отступы слева и справа для центрирования*/
+    float: right;
+}
+
+/* секція email */
+
+.email {
+    padding-bottom: 120px; /* вказали для секції email отступ снизу 120px*/
+
+}
+
+.email h3 {
+    margin-top: 60px; /* вказали для заголовка h3 отступ сверху 60px*/
+    font-size: 30px; /* вказали для заголовка h3 розмір шрифту 30px*/
+}
+
+.email .block {
+    background: #1C140F; /* вказали для блока block фон темно-коричневого цвета*/
+    margin-top: 30px; /* вказали для блока block отступ сверху 30px*/
+    border-radius: 10px; /* вказали для блока block закругление углов 10px*/
+    padding: 40px 3%; /* вказали для блока block отступы со всех сторон 40px и 3%*/
+    width: 94%; /* вказали для блока block ширину 94%*/
+    display: flex; /* вказали для блока block использование флексбокса для размещения элементов*/
+    justify-content: space-between; /* вказали для блока block равномерное распределение элементов по горизонтали*/
+    align-items: center; /* вказали для блока block выравнивание элементов по вертикали*/
+}
+
+.email .block h4 {
+    font-size: 30px; /* вказали для заголовка h4 розмір шрифту 30px*/
+    font-weight: 500; /* вказали для заголовка h4 товщину шрифту 600*/
+
+}
+
+.email .block p {
+    width: 500px; /* вказали для абзаца ширину 500px*/
+}
+
+.email .block input {
+    background: #ffffff; /* вказали для поля ввода фон белого цвета*/
+    outline: none; /* убрали обводку для поля ввода*/
+    border: 0; /* убрали рамку для поля ввода*/
+    border-radius: 5px; /* вказали для поля ввода закругление углов 5px*/
+    width: 380px; /* вказали для поля ввода ширину 380px*/
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400; /* вказали для body товщину шрифту 400*/
+    padding: 20px 30px; /* вказали для поля ввода отступы со всех сторон 20px и 30px*/
+    position: relative;
+    right: -100px; /* вказали для поля ввода отступ справа -50px для правильного расположения внутри блока block*/
+    z-index: 1; /* вказали для поля ввода z-index 1 для расположения поверх других элементов внутри блока block*/
+    padding-right: 120px; /* вказали для поля ввода отступ справа 150px для правильного расположения внутри блока block*/   
+}
+
+.email .block input::placeholder {
+    color: #898989; /* вказали для плейсхолдера цвет серый*/
+}
+
+.email .block button {
+    cursor: pointer; /* вказали для кнопки курсор указатель при наведении*/
+    border: 0; /* убрали рамку для кнопки*/
+    padding: 13px 17px; /* вказали для кнопки отступы со всех сторон 13px и 17px*/
+    position: relative;
+    z-index: 2; /* вказали для кнопки z-index 2 для расположения поверх других элементов внутри блока block*/
+    color: #ffffff; /* вказали для кнопки цвет текста белый*/
+
+}
+
+/*8 секція About */
+
+.hero-about {
+    position: relative;
+}
+
+.hero-about .info {
+    width: 500px; /* вказали для секції info ширину 500px*/
+    padding: 250px 0; /* вказали для секції info отступ сверху 250px*/
+}
+
+.hero-about .info h1 {
+    margin-bottom: 15px; /* вказали для заголовка h1 отступ снизу 15px*/
+    font-size: 30px; /* вказали для заголовка h1 розмір шрифту 30px*/
+}
+
+.hero-about .info .btn {
+    margin-top: 20px; /* вказали для кнопки отступ сверху 20px*/
+}
+
+.hero-about img {
+    position: absolute;
+    right: -90px; /* вказали для зображення отступ справа -50px для правильного расположения внутри секции hero-about*/
+    top: 0; /* вказали для зображения отступ сверху 0 для правильного расположения внутри секции hero-about*/
+}
+
+.work {
+    padding: 80px 0; /* вказали для секції work отступы со всех сторон 80px и 0*/
+}
+.work h3 {
+    font-size: 25px; /* вказали для заголовка h3 розмір шрифту 25px*/
+    margin-bottom: 40px; /* вказали для заголовка h3 отступ снизу 20px*/
+}
+
+.work .blocks {
+    display: flex; /* вказали для секції blocks использование флексбокса для размещения элементов*/
+    justify-content: space-between; /* вказали для секції blocks равномерное распределение элементов по горизонтали*/
+
+}
+
+.work .blocks .block {
+    width: 25%; /* вказали для блока block ширину 25%*/
+    border-radius: 10px; /* вказали для блока block закругление углов 10px*/
+    padding: 50px 35px; /* вказали для блока block отступы со всех сторон 50px и 35px*/
+    background: #1C140F; /* вказали для блока block фон темно-коричневого цвета*/
+}
+
+.work .blocks .block h3 {
+    font-size: 20px; /* вказали для заголовка h3 розмір шрифту 20px*/
+    margin: 20px 0; /* вказали для заголовка h3 отступы со всех сторон 20px и 0*/
+}
+
+.work .blocks .block .badge {
+    border-radius: 7px; /* вказали для элемента badge закругление углов 7px*/
+    padding: 10px 20px; /* вказали для элемента badge отступы со всех сторон 10px и 20px*/
+}
+
+.work .blocks .block .badge.purple {
+    background: #360044; /* вказали для элемента с классом purple фон фиолетового цвета*/
+}
+
+.work .blocks .block .badge.brown {
+    background: #421400; /* вказали для элемента с классом brown фон оранжевого цвета*/
+}
+
+.work .blocks .block .badge.green {
+    background: #003824af; /* вказали для элемента с классом green фон зеленого цвета*/
+}
+
+
+
+/*footer*/
+footer {
+    background: #1C140F; /* вказали для footer фон темно-коричневого цвета*/
+    padding: 50px 0; /* вказали для footer отступы со всех сторон 50px и 0*/
+}
+
+footer .block {
+    display: flex; /* вказали для блока block использование флексбокса для размещения элементов*/
+    justify-content: space-between; /* вказали для блока block равномерное распределение элементов по горизонтали*/
+}
+
+footer .block p {
+    width: 200px; /* вказали для абзаца ширину 300px*/
+    margin: 15px 0; /* вказали для абзаца отступы со всех сторон 15px и 0*/
+}
+
+footer .block h4 {
+    font-weight: 500; /* вказали для заголовка h4 товщину шрифту 500*/
+    font-size: 20px; /* вказали для заголовка h4 розмір шрифту 20px*/
+}
+
+footer .block ul {
+    list-style: none; /* убрали маркеры для списка*/
+}
+
+footer .block ul li {
+    margin-top: 7px; /* вказали для элементов списка отступ сверху 7px*/
+    opacity: 0.7; /* вказали для элементов списка прозрачность 0.7 для создания эффекта затенения*/
+}
+
+footer hr {
+    margin: 30px 0; /* вказали для горизонтальной линии отступы со всех сторон 30px и 0*/
+    border: 0; /* убрали рамку для горизонтальной линии*/
+    height: 0.6px; /* вказали для горизонтальной линии высоту 0.6px*/
+    background: #ccc; /* вказали для горизонтальной линии цвет серый*/
+}
+
+footer > p {
+    text-align: center; /* вказали для абзаца выравнивание текста по центру*/
+}
+
+/* Contacts */
+
+.hero-contacts h1 {
+    text-align: center;
+    margin-top: 70px;
+    margin-bottom: 30px;
+    font-size: 33px;
+}
+
+.hero-contacts p {
+    text-align: center;
+}
+
+.hero-contacts img {
+    width: 70%;
+    margin: 80px 15%;
+}
+
+.feedback {
+    padding: 70px 0;
+    background: #2b1c14;
+}
+
+.feedback h2 {
+    text-align: center;
+    font-weight: 500;
+    font-size: 33px;
+}
+
+.feedback p {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.feedback form {
+    margin: 80px auto;
+    width: 600px;
+}
+
+.feedback form .inline {
+    display: flex;
+    justify-content: space-between;
+}
+
+.feedback form .inline > div {
+    width: 50%;
+}
+
+.feedback form label {
+    color: #4F4F4F;
+    font-size: 14px;
+}
+
+.feedback form input,
+.feedback form textarea {
+    background: #2c2420;
+    border-radius: 10px;
+    border: 0.6 solid #cecece;
+    display: block;
+    width: 90%;
+    padding: 15px 10px;
+    outline: none;
+    color: #ffffff;
+    margin-top: 7px;
+    margin-bottom: 20px;
+}
+
+.feedback form .one-line {
+    width: 96%;
+}
+
+.feedback form textarea {
+    resize: none;
+    height: 200px;
+}
+
+
+.feedback form button {
+    background: #DC7000;
+    border-radius: 5px;
+    border: 0;
+    float: right;
+    cursor: pointer;
+    color: #ccc;
+    padding: 13px 35px;
+    transition: all 500ms ease;
+}
+
+.feedback form button:hover {
+    background: #8b0505;
+}
